@@ -3,10 +3,12 @@ import 'package:myshop/core/all_product_screen.dart';
 // import 'all_products_screen.dart'; // Import the screen
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

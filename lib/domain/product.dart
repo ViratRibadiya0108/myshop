@@ -1,4 +1,9 @@
-// import 'dart:convert'
+// import 'dart:convert';
+
+// import 'package:myshop/core/a.dart';
+import 'package:myshop/domain/dimensions.dart';
+import 'package:myshop/domain/meta.dart';
+import 'package:myshop/domain/review.dart';
 
 class Product {
   final int id;
@@ -107,90 +112,5 @@ class Product {
         "meta": meta?.toJson(),
         "images": images != null ? List<dynamic>.from(images!.map((x) => x)) : [],
         "thumbnail": thumbnail,
-      };
-}
-class Meta {
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-  final String? barcode;
-  final String? qrCode;
-
-  Meta({
-    this.createdAt,
-    this.updatedAt,
-    this.barcode,
-    this.qrCode,
-  });
-
-  factory Meta.fromJson(Map<String, dynamic> json) => Meta(
-        createdAt: json["createdAt"] != null
-            ? DateTime.parse(json["createdAt"])
-            : null,
-        updatedAt: json["updatedAt"] != null
-            ? DateTime.parse(json["updatedAt"])
-            : null,
-        barcode: json["barcode"],
-        qrCode: json["qrCode"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "createdAt": createdAt?.toIso8601String(),
-        "updatedAt": updatedAt?.toIso8601String(),
-        "barcode": barcode,
-        "qrCode": qrCode,
-      };
-}
-class Review {
-  final int? rating;
-  final String? comment;
-  final DateTime? date;
-  final String? reviewerName;
-  final String? reviewerEmail;
-
-  Review({
-    this.rating,
-    this.comment,
-    this.date,
-    this.reviewerName,
-    this.reviewerEmail,
-  });
-
-  factory Review.fromJson(Map<String, dynamic> json) => Review(
-        rating: json["rating"],
-        comment: json["comment"],
-        date: json["date"] != null ? DateTime.parse(json["date"]) : null,
-        reviewerName: json["reviewerName"],
-        reviewerEmail: json["reviewerEmail"],
-      );
-
-  Map<String, dynamic> toJson() => {
-        "rating": rating,
-        "comment": comment,
-        "date": date?.toIso8601String(),
-        "reviewerName": reviewerName,
-        "reviewerEmail": reviewerEmail,
-      };
-}
-class Dimensions {
-  final double? width;
-  final double? height;
-  final double? depth;
-
-  Dimensions({
-    this.width,
-    this.height,
-    this.depth,
-  });
-
-  factory Dimensions.fromJson(Map<String, dynamic> json) => Dimensions(
-        width: json["width"]?.toDouble(),
-        height: json["height"]?.toDouble(),
-        depth: json["depth"]?.toDouble(),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "width": width,
-        "height": height,
-        "depth": depth,
       };
 }

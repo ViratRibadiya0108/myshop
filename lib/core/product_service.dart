@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:myshop/core/a.dart';
+// import 'package:myshop/core/a.dart';
+import 'package:myshop/domain/product.dart';
 // import 'product.dart'; // Import your Product model
 
 class ProductService {
